@@ -1,7 +1,7 @@
 return {
   -- Fix Mason by including BOTH the default and the Roslyn registry
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       registries = {
         "github:mason-org/mason-registry",    -- The one you were missing!
