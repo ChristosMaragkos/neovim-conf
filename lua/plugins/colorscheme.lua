@@ -1,42 +1,43 @@
 return {
 	{
-		"projekt0n/github-nvim-theme",
-		name = "github-theme",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			local github_theme = require("github-theme")
-			github_theme.setup({})
-			vim.cmd("colorscheme github_dark_default")
-
-			-- Dim utility
-			local function darken(hex, factor)
-				hex = hex:gsub("#", "")
-				local r = tonumber(hex:sub(1, 2), 16)
-				local g = tonumber(hex:sub(3, 4), 16)
-				local b = tonumber(hex:sub(5, 6), 16)
-				r = math.floor(r * factor)
-				g = math.floor(g * factor)
-				b = math.floor(b * factor)
-				return string.format("#%02x%02x%02x", r, g, b)
-			end
-			local dim_factor = 0.8 -- slightly less dim
-
-			-- Get all highlight groups dynamically
-			local groups = vim.fn.getcompletion("", "highlight")
-			for _, group in ipairs(groups) do
-				local ok, hl = pcall(vim.api.nvim_get_hl_by_name, group, true)
-				if ok and hl.foreground then
-					local hex = string.format("#%06x", hl.foreground)
-					local bg = hl.background and string.format("#%06x", hl.background) or nil
-					-- Strings stay green
-					if group:match("String") then
-						vim.api.nvim_set_hl(0, group, { fg = "#98c379", bg = bg })
-					else
-						vim.api.nvim_set_hl(0, group, { fg = darken(hex, dim_factor), bg = bg })
-					end
-				end
-			end
-		end,
+		-- Uncomment me to use the github dark theme
+		-- "projekt0n/github-nvim-theme",
+		-- name = "github-theme",
+		-- lazy = false,
+		-- priority = 1000,
+		-- config = function()
+		-- 	local github_theme = require("github-theme")
+		-- 	github_theme.setup({})
+		-- 	vim.cmd("colorscheme github_dark_default")
+		--
+		-- 	-- Dim utility
+		-- 	local function darken(hex, factor)
+		-- 		hex = hex:gsub("#", "")
+		-- 		local r = tonumber(hex:sub(1, 2), 16)
+		-- 		local g = tonumber(hex:sub(3, 4), 16)
+		-- 		local b = tonumber(hex:sub(5, 6), 16)
+		-- 		r = math.floor(r * factor)
+		-- 		g = math.floor(g * factor)
+		-- 		b = math.floor(b * factor)
+		-- 		return string.format("#%02x%02x%02x", r, g, b)
+		-- 	end
+		-- 	local dim_factor = 0.8 -- slightly less dim
+		--
+		-- 	-- Get all highlight groups dynamically
+		-- 	local groups = vim.fn.getcompletion("", "highlight")
+		-- 	for _, group in ipairs(groups) do
+		-- 		local ok, hl = pcall(vim.api.nvim_get_hl_by_name, group, true)
+		-- 		if ok and hl.foreground then
+		-- 			local hex = string.format("#%06x", hl.foreground)
+		-- 			local bg = hl.background and string.format("#%06x", hl.background) or nil
+		-- 			-- Strings stay green
+		-- 			if group:match("String") then
+		-- 				vim.api.nvim_set_hl(0, group, { fg = "#98c379", bg = bg })
+		-- 			else
+		-- 				vim.api.nvim_set_hl(0, group, { fg = darken(hex, dim_factor), bg = bg })
+		-- 			end
+		-- 		end
+		-- 	end
+		-- end,
 	},
 }
