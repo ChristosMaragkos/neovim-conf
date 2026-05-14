@@ -13,17 +13,14 @@ return {
 		"neovim/nvim-lspconfig",
 		opts = {
 			servers = {
-				omnisharp = { enabled = false },
-				csharp_ls = { enabled = false },
-				marksman = { enabled = false },
 				lemminx = {
 					settings = {
 						xml = {
 							schemas = {
-								fileMatch = { "*.csproj", "*.props", "*.targets", "*.sln.xml" },
-								url = "https://raw.githubusercontent.com/dotnet/msbuild/main/src/MSBuild/Microsoft.Build.xsd",
+								{
+									fileMatch = { "*.csproj", "*.props", "*.targets" },
+								},
 							},
-							validation = { noGrammar = "hint" },
 						},
 					},
 				},

@@ -11,15 +11,12 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
-			servers = {
-				fsautocomplete = {},
-			},
+			servers = {},
 		},
 	},
 	{
 		"ionide/Ionide-vim",
 		ft = { "fsharp", "fsharp_project" },
-		config = function()
-		end,
+		config = function() end,
 	},
 }
