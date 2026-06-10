@@ -4,8 +4,8 @@ Config files for my personal neovim setup.
 
 Changes made to neovim starter:
 
-- GitHub dark theme (with dimmed colors because eye strain is no fun)
-- .NET, C and C++ language servers
+- You can bet there will be a different dark theme every week
 - Lazygit integration
+- .NET, C, C++, lua, python and a few other LSPs I did not foresee I'd be using
 - Not a smidgeon of AI tools
 - Some tooling for my assembly work
