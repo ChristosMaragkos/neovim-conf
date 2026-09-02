@@ -24,8 +24,3 @@ vim.cmd("colorscheme everforest")
 
 vim.api.nvim_set_hl(0, "Pmenu", { fg = "#d3c6aa", bg = "#222C30" })
 vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#d3c6aa", bg = "#222C30" })
-
-vim.opt_local.tabstop = 4
-vim.opt_local.softtabstop = 4
-vim.opt_local.shiftwidth = 4
-vim.cmd("set sw=4")

@@ -16,3 +16,9 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.sidescrolloff = 8
 	end,
 })
+
+-- JUST GIVE ME FOUR-SPACE TABS DAMN IT
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
