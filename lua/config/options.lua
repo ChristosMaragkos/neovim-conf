@@ -9,11 +9,9 @@ vim.filetype.add({
 -- stop the freaking markdown LSP from badgering us with warnings.
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
-	callback = function()
-		vim.diagnostic.enable(false)
+	callback = function(args)
+		vim.diagnostic.enable(false, { bufnr = args.buf })
 		vim.opt.conceallevel = 2
-		vim.opt_local.wrap = false
-		vim.opt_local.sidescrolloff = 8
 	end,
 })
 
