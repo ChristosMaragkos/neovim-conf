@@ -1,3 +1,5 @@
+local schema_path = vim.fn.expand("~/.config/nvim/schemas/Microsoft.Build.CommonTypes.xsd")
+
 return {
 	{
 		"mason-org/mason.nvim",
@@ -34,5 +36,40 @@ return {
 		config = function()
 			require("easy-dotnet").setup()
 		end,
+	},
+
+	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				lemminx = {
+					filetypes = { "xml", "xsd", "xsl", "xslt", "svg", "csproj" },
+					settings = {
+						xml = {
+							fileAssociations = {
+								{
+									systemId = schema_path,
+									pattern = "**/*.csproj",
+								},
+								{
+									systemId = schema_path,
+									pattern = "**/*.props",
+								},
+								{
+									systemId = schema_path,
+									pattern = "**/*.targets",
+								},
+							},
+							completion = {
+								autoCloseTags = true,
+							},
+							validation = {
+								schema = true,
+							},
+						},
+					},
+				},
+			},
+		},
 	},
 }
