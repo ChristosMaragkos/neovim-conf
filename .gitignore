@@ -9,3 +9,4 @@ data
 
 /syntax
 /schemas
+/lua/plugins/bmasm.lua
