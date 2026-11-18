@@ -9,6 +9,11 @@ vim.filetype.add({
 		targets = "xml",
 	},
 })
+vim.filetype.add({
+	extension = {
+		asm = "bmasm",
+	},
+})
 
 vim.g.everforest_background = "hard"
 vim.g.everforest_colors_override = {
