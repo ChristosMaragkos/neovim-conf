@@ -15,6 +15,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- use zsh if available but fall back to bash
+if vim.fn.executable("zsh") == 1 then
+	vim.o.shell = "zsh"
+end
+
 -- JUST GIVE ME FOUR-SPACE TABS DAMN IT
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
